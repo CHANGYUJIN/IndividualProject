@@ -52,10 +52,14 @@ public class TodoMain {
 				System.out.print("Enter a number of items to mark as <asap>");
 				int asapnum = sc.nextInt();
 				TodoUtil.hurryItem(l, asapnum);
+				break;
+				
 			case "err":
 				System.out.print("Enter a number of items to mark as <errday/week>");
 				int errdaynum = sc.nextInt();
 				TodoUtil.errdayItem(l, errdaynum);
+				break;
+				
 			case "ls":
 				TodoUtil.listAll(l);
 				break;

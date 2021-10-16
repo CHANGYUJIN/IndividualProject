@@ -351,7 +351,7 @@ public class TodoUtil {
 				i--;
 				continue;
 			}
-			}
+		}
 		System.out.println("The items have been marked <asap>.");
 	}
 	
