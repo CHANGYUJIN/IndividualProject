@@ -290,6 +290,7 @@ public class TodoUtil {
 		for(int i=0; i < compnum; i++) {
 			System.out.print("Enter the id of an item to be completed > ");
 			int id = sc.nextInt();
+			sc.nextLine();
 			if(id == -1)
 				return;
 			int check = 0;
