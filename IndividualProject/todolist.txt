@@ -46,5 +46,5 @@
 0##1##lecture##0##Cal2##calculus2 lecture##2021/09/29##2021/09/25 10:16:14
 0##0##lecture##0##arabic##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
 1##0##exam##0##CAO_exam##computer architecture and organization exam on Thursday##2021/10/21##2021/10/214 10:17:14
-1##1##exam##0##sp_exam##sound pattern exam on Tuesday##2021/10/19##2021/10/11 10:19:02
+1##0##exam##0##sp_exam##sound pattern exam on Tuesday##2021/10/19##2021/10/11 10:19:02
 1##0##exam##0##OS_exam##operating systems exam on monday##2021/10/18##2021/10/11 10:27:33
