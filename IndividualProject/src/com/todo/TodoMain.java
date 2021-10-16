@@ -114,7 +114,6 @@ public class TodoMain {
 			}
 		} while (!quit);
 		TodoUtil.saveList(l, "todolist.txt");
-		
 	}
 	
 }

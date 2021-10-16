@@ -293,36 +293,19 @@ public class TodoUtil {
 			if(id == -1)
 				return;
 			int check = 0;
-			if(compnum == 1) {
-				for (TodoItem item : l.getList()) {
-					if(item.getId() == id) {
-						check = 1;
-						item.setIs_completed(1);
-						l.completeItem(item);
-						System.out.println("the item has been completed.");
-						return;
-					}
-				}
-				if (check != 1) {
-					System.out.println("an item with the id does not exist. Please try again.");
-					i--;
-					continue;
+			for (TodoItem item : l.getList()) {
+				if(item.getId() == id) {
+					check = 1;
+					item.setIs_completed(1);
+					l.completeItem(item);
+					System.out.println("the item has been completed.");
+					return;
 				}
 			}
-			else {
-				for (TodoItem item : l.getList()) {
-					if(item.getId() == id) {
-						check = 1;
-						item.setIs_completed(1);
-						l.completeItem(item);
-						break;
-					}
-				}
-				if (check != 1) {
-					System.out.println("an item with the id does not exist. Please try again.");
-					i--;
-					continue;
-				}
+			if (check != 1) {
+				System.out.println("an item with the id does not exist. Please try again.");
+				i--;
+				continue;
 			}
 		}
 		System.out.println("The items have been completed.");
