@@ -356,9 +356,9 @@ public class TodoUtil {
 	
 	public static void errdayItem(TodoList l, int errdaynum) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("[errday]\n");
+		System.out.println("[err]\n");
 		for(int i=0; i < errdaynum; i++) {
-			System.out.print("Enter the id of an item to be marked as <errday>: ");
+			System.out.print("Enter the id of an item to be marked as <err/week>: ");
 			int id = sc.nextInt();
 			sc.nextLine();
 			if(id == -1)
@@ -367,7 +367,7 @@ public class TodoUtil {
 			for (TodoItem item : l.getList()) {
 				if(item.getId() == id) {
 					check = 1;
-					item.setErrday(1);
+					item.setErr(1);
 					l.errdayItem(item);
 					break;
 				}
@@ -378,7 +378,7 @@ public class TodoUtil {
 				continue;
 			}
 			}
-		System.out.println("The items have been marked <errday>.");
+		System.out.println("The items have been marked <err/week>.");
 	}
 //	public static void findCategory(TodoList l, String category) {
 //		int num = 0;

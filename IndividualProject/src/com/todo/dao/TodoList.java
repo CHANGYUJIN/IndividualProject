@@ -29,13 +29,13 @@ public class TodoList {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String line;
-			String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, errday)"
+			String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, err)"
 						+ " values (?,?,?,?,?,?,?,?);";
 			int records = 0;
 			while((line = br.readLine()) != null) {
 				StringTokenizer st = new StringTokenizer(line, "##");
 				String asap = st.nextToken();
-				String errday = st.nextToken();
+				String err = st.nextToken();
 				String category = st.nextToken();
 				String is_completed = st.nextToken();
 				String title = st.nextToken();
@@ -51,7 +51,7 @@ public class TodoList {
 				pstmt.setString(5, due_date);
 				pstmt.setInt(6, Integer.parseInt(is_completed));
 				pstmt.setInt(7, Integer.parseInt(asap));
-				pstmt.setInt(8, Integer.parseInt(errday));
+				pstmt.setInt(8, Integer.parseInt(err));
 				
 				int count = pstmt.executeUpdate();
 				if(count > 0) records++;
@@ -65,7 +65,7 @@ public class TodoList {
 	}
 	
 	public int addItem(TodoItem t) {
-		String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, errday)" + " values (?,?,?,?,?,?,?,?);";
+		String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, err)" + " values (?,?,?,?,?,?,?,?);";
 		PreparedStatement pstmt;
 		int count = 0;
 		try {
@@ -77,7 +77,7 @@ public class TodoList {
 			pstmt.setString(5, t.getDue_date());
 			pstmt.setInt(6, t.getIs_completed());
 			pstmt.setInt(7, t.getAsap());
-			pstmt.setInt(8, t.getErrday());
+			pstmt.setInt(8, t.getErr());
 			count = pstmt.executeUpdate();
 			pstmt.close();
 		} catch (SQLException e) {
@@ -88,7 +88,7 @@ public class TodoList {
 	}
 	
 	public int updateItem(TodoItem t) {
-		String sql = "update list set title=?, memo=?, category=?, current_date=?, due_date=?, is_completed=?, asap=?, errday=?" + " where id = ?;";
+		String sql = "update list set title=?, memo=?, category=?, current_date=?, due_date=?, is_completed=?, asap=?, err=?" + " where id = ?;";
 		PreparedStatement pstmt;
 		int count = 0;
 		try {
@@ -100,7 +100,7 @@ public class TodoList {
 			pstmt.setString(5, t.getDue_date());
 			pstmt.setInt(6, t.getIs_completed());
 			pstmt.setInt(7, t.getAsap());
-			pstmt.setInt(8, t.getErrday());
+			pstmt.setInt(8, t.getErr());
 			pstmt.setInt(9, t.getId());
 			count = pstmt.executeUpdate();
 			pstmt.close();
@@ -160,7 +160,7 @@ public class TodoList {
 	}
 	
 	public int errdayItem(TodoItem t) {
-		String sql = "update list set errday = ?" + " where id=?;";
+		String sql = "update list set err = ?" + " where id=?;";
 		PreparedStatement pstmt;
 		int count = 0;
 		try {
@@ -206,8 +206,8 @@ public class TodoList {
 				String current_date = rs.getString("current_date");
 				int is_completed = rs.getInt("is_completed");
 				int asap = rs.getInt("asap");
-				int errday = rs.getInt("errday");
-				TodoItem t = new TodoItem(category, title, description, due_date, is_completed,asap, errday);
+				int err = rs.getInt("err");
+				TodoItem t = new TodoItem(category, title, description, due_date, is_completed,asap, err);
 				t.setId(id);
 				t.setCurrent_date(current_date);
 				list.add(t);
@@ -238,8 +238,8 @@ public class TodoList {
 				String current_date = rs.getString("current_date");
 				int is_completed = rs.getInt("is_completed");
 				int asap = rs.getInt("asap");
-				int errday = rs.getInt("errday");
-				TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, errday);
+				int err = rs.getInt("err");
+				TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, err);
 				t.setId(id);
 				t.setCurrent_date(current_date);
 				list.add(t);
@@ -269,8 +269,8 @@ public class TodoList {
 					String current_date = rs.getString("current_date");
 					int is_completed = rs.getInt("is_completed");
 					int asap = rs.getInt("asap");
-					int errday = rs.getInt("errday");
-					TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, errday);
+					int err = rs.getInt("err");
+					TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, err);
 					t.setId(id);
 					t.setCurrent_date(current_date);
 					list.add(t);
@@ -295,8 +295,8 @@ public class TodoList {
 					String current_date = rs.getString("current_date");
 					int is_completed = rs.getInt("is_completed");
 					int asap = rs.getInt("asap");
-					int errday = rs.getInt("errday");
-					TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, errday);
+					int err = rs.getInt("err");
+					TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, err);
 					t.setId(id);
 					t.setCurrent_date(current_date);
 					list.add(t);
@@ -308,7 +308,7 @@ public class TodoList {
 		}
 		else {
 			try {
-				String sql = "SELECT * FROM list WHERE errday = ?";
+				String sql = "SELECT * FROM list WHERE err = ?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, is_errday);
 				ResultSet rs = pstmt.executeQuery();
@@ -321,8 +321,8 @@ public class TodoList {
 					String current_date = rs.getString("current_date");
 					int is_completed = rs.getInt("is_completed");
 					int asap = rs.getInt("asap");
-					int errday = rs.getInt("errday");
-					TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, errday);
+					int err = rs.getInt("err");
+					TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, err);
 					t.setId(id);
 					t.setCurrent_date(current_date);
 					list.add(t);
@@ -371,8 +371,8 @@ public class TodoList {
 				String current_date = rs.getString("current_date");
 				int is_completed = rs.getInt("is_completed");
 				int asap = rs.getInt("asap");
-				int errday = rs.getInt("errday");
-				TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, errday);
+				int err = rs.getInt("err");
+				TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, err);
 				t.setId(id);
 				t.setCurrent_date(current_date);
 				list.add(t);
@@ -403,8 +403,8 @@ public class TodoList {
 				String current_date = rs.getString("current_date");
 				int is_completed = rs.getInt("is_completed");
 				int asap = rs.getInt("asap");
-				int errday = rs.getInt("errday");
-				TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, errday);
+				int err = rs.getInt("err");
+				TodoItem t = new TodoItem(category, title, description, due_date, is_completed, asap, err);
 				t.setId(id);
 				t.setCurrent_date(current_date);
 				list.add(t);

@@ -1,10 +1,50 @@
-1##0##assignment##1##OS##philosopher's lunch programming assignment##2021/10/05##2021/10/09 01:10:32
-0##0##meeting##1##lunch##lunch with prof. Ji##2021/09/29##2021/10/09 02:25:03
-0##0##meeting##0##breakfast##breakfast with Susanna##2021/09/24##2021/09/25 10:10:03
-0##0##assignment##0##algorithm##chatper 4 & 5##2021/10/12##2021/10/09 02:51:38
-0##0##assignment##1##syntax##chapter 4##2021/09/28##2021/09/25 10:14:55
-0##0##lecture##0##TGC##translation in global context lecture##2021/09/29##2021/09/25 10:16:14
+1##0##assignment##1##OS_assginment1##philosopher's lunch programming assignment##2021/10/05##2021/10/09 01:10:32
+0##0##meeting##1##lunch_1##lunch with prof. Ji##2021/09/29##2021/10/09 02:25:03
+0##0##meeting##0##breakfast_1##breakfast with Susanna##2021/09/24##2021/09/25 10:10:03
+0##0##assignment##1##algorithm_assignment1##chatper 1##2021/10/12##2021/10/09 02:51:38
+0##0##assignment##1##syntax_assignment1##chapter 1 & 2##2021/09/28##2021/09/25 10:14:55
+0##1##lecture##0##TGC##translation in global context lecture##2021/09/29##2021/09/25 10:16:14
 0##0##lecture##0##english##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
-0##0##contest##0##programming##mandatory programming contest##2021/10/06##2021/09/25 10:17:14
-0##1##chapel##0##wednesday_chapel##online chapel every Wednesday##2021/09/29##2021/09/25 10:19:02
-0##0##assignment##0##sound_pattern##presentation about Jeju-eo##2021/10/05##2021/09/25 10:27:33
+1##0##contest##0##programming##mandatory programming contest##2021/10/06##2021/09/25 10:17:14
+0##1##chapel##0##Wednesday_chapel##online chapel on Wednesday##2021/09/29##2021/09/25 10:19:02
+0##0##assignment##0##sp_assignment1##presentation about Jeju-eo##2021/10/05##2021/09/25 10:27:33
+1##0##assignment##1##OS_assignment2##programming assignment1##2021/10/05##2021/10/09 01:10:32
+0##0##meeting##1##lunch_2##lunch with prof. Song##2021/09/29##2021/10/09 02:25:03
+0##0##meeting##0##dinner_1##dinner with Yelim##2021/09/24##2021/09/25 10:10:03
+0##0##assignment##0##algorithm_assignment2##chatper 2##2021/10/12##2021/10/09 02:51:38
+0##0##assignment##1##syntax_assignment2##chapter 3##2021/09/28##2021/09/25 10:14:55
+0##1##lecture##0##OS##Operating Systems lecture##2021/09/29##2021/09/25 10:16:14
+0##0##lecture##0##chinese##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
+0##1##study##0##CAO_study##computer architecture and organization study##2021/10/06##2021/09/25 10:17:14
+0##1##chapel##0##Sunday_chapel##sunday chapel##2021/09/29##2021/09/25 10:19:02
+0##0##assignment##0##sp_assignment2##chapter 1 & 2##2021/10/05##2021/09/25 10:27:33
+1##0##assignment##1##OS_assignment3##programming assignment2##2021/10/05##2021/10/09 01:10:32
+0##0##meeting##1##lunch_3##lunch with prof. Park##2021/09/29##2021/10/09 02:25:03
+0##0##meeting##0##breakfast_2##breakfast with Jinyoung##2021/09/24##2021/09/25 10:10:03
+0##0##assignment##0##algorithm_assignment3##chatper 3##2021/10/12##2021/10/09 02:51:38
+0##0##assignment##1##syntax_assignment3##chapter 4##2021/09/28##2021/09/25 10:14:55
+0##1##lecture##0##CAO##computer architecture and organization lecture##2021/09/29##2021/09/25 10:16:14
+0##0##lecture##0##french##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
+0##1##study##0##OS_study##operating systems study##2021/10/06##2021/09/25 10:17:14
+0##1##lecture##0##DS##data structure lecture##2021/09/29##2021/09/25 10:19:02
+0##0##assignment##0##sp_assignment3##chapter 3##2021/10/05##2021/09/25 10:27:33
+1##0##assignment##1##OS_assignment4##code review report##2021/10/05##2021/10/09 01:10:32
+0##0##meeting##1##lunch_4##lunch with prof. Han##2021/09/29##2021/10/09 02:25:03
+0##0##meeting##0##dinner_2##dinner with Eunji##2021/09/24##2021/09/25 10:10:03
+0##0##assignment##0##algorithm_assignment4##chatper 4##2021/10/12##2021/10/09 02:51:38
+0##0##assignment##1##syntax_assignment4##chapter 5##2021/09/28##2021/09/25 10:14:55
+0##1##work##0##DS_TA##DS TA work##2021/09/29##2021/09/25 10:16:14
+0##0##lecture##0##german##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
+0##1##lecture##0##LA##linear algebra lecture##2021/10/06##2021/09/25 10:17:14
+0##1##lecture##0##AP##app programming lecture##2021/09/29##2021/09/25 10:19:02
+0##0##assignment##0##sp_assignment4##chapter 4##2021/10/05##2021/09/25 10:27:33
+1##0##assignment##1##OS_assignment5##chapter 5 problemt 2##2021/10/05##2021/10/09 01:10:32
+0##0##meeting##1##lunch_5##lunch with prof. Cho##2021/09/29##2021/10/09 02:25:03
+0##0##meeting##0##breakfast_3##breakfast with Yeaji##2021/09/24##2021/09/25 10:10:03
+0##0##assignment##0##algorithm_assignment5##chatper 5##2021/10/12##2021/10/09 02:51:38
+0##0##assignment##1##syntax_assignment5##chapter 5##2021/09/28##2021/09/25 10:14:55
+0##1##lecture##0##Cal2##calculus2 lecture##2021/09/29##2021/09/25 10:16:14
+0##0##lecture##0##arabic##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
+1##0##exam##0##CAO_exam##computer architecture and organization exam on Thursday##2021/10/21##2021/10/214 10:17:14
+1##1##exam##0##sp_exam##sound pattern exam on Tuesday##2021/10/19##2021/10/11 10:19:02
+1##0##exam##0##OS_exam##operating systems exam on monday##2021/10/18##2021/10/11 10:27:33
