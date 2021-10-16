@@ -146,14 +146,15 @@ public class TodoUtil {
 		}
 		sc.nextLine();
 		
-		int new_errday = sc.nextInt();
-		if(new_asap == -1) {
+		System.out.print("new status for err (1 for marking as errday/week, otherwise 0) > ");
+		int new_err = sc.nextInt();
+		if(new_err == -1) {
 			System.out.println("cancelled");
 			return;
 		}
 		sc.nextLine();
 		
-		TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date, new_is_completed, new_asap, new_errday);
+		TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date, new_is_completed, new_asap, new_err);
 		t.setId(num);
 		if(l.updateItem(t)>0) {
 			System.out.println("edited");
