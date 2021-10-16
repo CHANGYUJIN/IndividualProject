@@ -49,9 +49,13 @@ public class TodoMain {
 				TodoUtil.completeItem(l, compnum);
 				break;
 			case "asap":
-				System.out.print("Enter a number of items to mark as [asap]");
+				System.out.print("Enter a number of items to mark as <asap>");
 				int asapnum = sc.nextInt();
 				TodoUtil.hurryItem(l, asapnum);
+			case "errday":
+				System.out.print("Enter a number of items to mark as <errday>");
+				int errdaynum = sc.nextInt();
+				TodoUtil.hurryItem(l, errdaynum);
 			case "ls":
 				TodoUtil.listAll(l);
 				break;
@@ -61,11 +65,15 @@ public class TodoMain {
 				break;
 				
 			case "ls_comp":
-				TodoUtil.listAll(l, 1, 0);
+				TodoUtil.listAll(l, 1, 0, 0);
 				break;
 				
 			case "ls_asap":
-				TodoUtil.listAll(l, 0, 1);
+				TodoUtil.listAll(l, 0, 1, 0);
+				break;
+			
+			case "ls_errday":
+				TodoUtil.listAll(l, 0, 0, 1);
 				break;
 				
 			case "ls_name":

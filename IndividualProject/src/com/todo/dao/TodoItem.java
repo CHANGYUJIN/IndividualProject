@@ -9,13 +9,14 @@ public class TodoItem {
     private String current_date;
     private int id;
     private int asap;
+    private int errday;
     private SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
     private String category;
     private String due_date;
     private int is_completed;
 
 
-    public TodoItem(String category, String title, String desc, String due_date, int is_completed, int asap){
+    public TodoItem(String category, String title, String desc, String due_date, int is_completed, int asap, int errday){
         this.title=title;
         this.desc=desc;
         this.current_date=format.format(new Date());
@@ -23,6 +24,7 @@ public class TodoItem {
         this.due_date = due_date;
         this.is_completed = is_completed;
         this.asap = asap;
+        this.errday = errday;
     }
     
     public String getTitle() {
@@ -69,6 +71,15 @@ public class TodoItem {
 	public void setAsap(int asap) {
 		this.asap = asap;
 	}
+	
+	public int getErrday() {
+		return errday;
+	}
+	
+	public void setErrday(int errday) {
+		this.errday = errday;
+	}
+	
 	public String getCategory() {
 		return category;
 	}
@@ -97,21 +108,32 @@ public class TodoItem {
     public String toString() {
 		if(this.is_completed == 1)
 			if(this.asap == 1) {
-				return "<asap> " + "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
+				if(this.errday == 1)
+					return "<asap, errday> " + "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
+				else
+					return "<asap> " + "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
 			}
 			else {
 				return "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
 			}
 		else {
-			if(this.asap == 1)
-				return "<asap> " + "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
-			else
-				return "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
+			if(this.asap == 1) {
+				if(this.errday == 1)
+					return "<asap, errday> " + "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
+				else
+					return "<asap> " + "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
+			}
+			else {
+				if(this.errday == 1)
+					return "<errday> " + "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
+				else
+					return "[" + category + "] " + title + " - " + desc + " - " + due_date + " - " + current_date;
+			}
 		}
     }
     
     public String toSaveString() {
-    	return asap + "##" + category + "##" + is_completed + "##" + title + "##" + desc + "##" + due_date + "##" + current_date + "\n";
+    	return asap + "##" + errday + "##" + category + "##" + is_completed + "##" + title + "##" + desc + "##" + due_date + "##" + current_date + "\n";
     }
     
 }

@@ -49,7 +49,7 @@ public class TodoUtil {
 			return;
 		}
 		
-		TodoItem t = new TodoItem(category, title, desc, due_date, 0, 0);
+		TodoItem t = new TodoItem(category, title, desc, due_date, 0, 0, 0);
 		if(list.addItem(t) > 0) {
 			System.out.println("added");
 		}
@@ -136,6 +136,7 @@ public class TodoUtil {
 			System.out.println("cancelled");
 			return;
 		}
+		sc.nextLine();
 		
 		System.out.print("new status for asap (1 for marking as asap, otherwise 0) > ");
 		int new_asap = sc.nextInt();
@@ -143,8 +144,16 @@ public class TodoUtil {
 			System.out.println("cancelled");
 			return;
 		}
+		sc.nextLine();
 		
-		TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date, new_is_completed, new_asap);
+		int new_errday = sc.nextInt();
+		if(new_asap == -1) {
+			System.out.println("cancelled");
+			return;
+		}
+		sc.nextLine();
+		
+		TodoItem t = new TodoItem(new_category, new_title, new_description, new_due_date, new_is_completed, new_asap, new_errday);
 		t.setId(num);
 		if(l.updateItem(t)>0) {
 			System.out.println("edited");
@@ -171,10 +180,10 @@ public class TodoUtil {
 		}
 	}
 	
-	public static void listAll(TodoList l, int comp, int asap) {
+	public static void listAll(TodoList l, int comp, int asap, int is_errday) {
 		int num = 0;
 		
-		for (TodoItem item : l.getList(comp, asap)) {
+		for (TodoItem item : l.getList(comp, asap, is_errday)) {
 			num++;
 			System.out.println(item.getId() + ". " + item.toString());
 		}
@@ -307,11 +316,11 @@ public class TodoUtil {
 						l.completeItem(item);
 						break;
 					}
-					if (check != 1) {
-						System.out.println("an item with the id does not exist. Please try again.");
-						i--;
-						continue;
-					}
+				}
+				if (check != 1) {
+					System.out.println("an item with the id does not exist. Please try again.");
+					i--;
+					continue;
 				}
 			}
 		}
@@ -324,42 +333,52 @@ public class TodoUtil {
 		for(int i=0; i < asapnum; i++) {
 			System.out.print("Enter the id of an item to be marked as <asap>: ");
 			int id = sc.nextInt();
+			sc.nextLine();
 			if(id == -1)
 				return;
 			int check = 0;
-			if(asapnum == 1) {
-				for (TodoItem item : l.getList()) {
-					if(item.getId() == id) {
-						check = 1;
-						item.setAsap(1);
-						l.completeItem(item);
-						System.out.println("the item has been marked as <asap>.");
-						return;
-					}
-				}
-				if (check != 1) {
-					System.out.println("an item with the id does not exist. Please try again.");
-					i--;
-					continue;
+			for (TodoItem item : l.getList()) {
+				if(item.getId() == id) {
+					check = 1;
+					item.setAsap(1);
+					l.hurryItem(item);
+					break;
 				}
 			}
-			else {
-				for (TodoItem item : l.getList()) {
-					if(item.getId() == id) {
-						check = 1;
-						item.setAsap(1);
-						l.hurryItem(item);
-						break;
-					}
-					if (check != 1) {
-						System.out.println("an item with the id does not exist. Please try again.");
-						i--;
-						continue;
-					}
-				}
+			if (check != 1) {
+				System.out.println("an item with the id does not exist. Please try again.");
+				i--;
+				continue;
 			}
-		}
+			}
 		System.out.println("The items have been marked <asap>.");
+	}
+	
+	public static void errdayItem(TodoList l, int errdaynum) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("[errday]\n");
+		for(int i=0; i < errdaynum; i++) {
+			System.out.print("Enter the id of an item to be marked as <errday>: ");
+			int id = sc.nextInt();
+			sc.nextLine();
+			if(id == -1)
+				return;
+			int check = 0;
+			for (TodoItem item : l.getList()) {
+				if(item.getId() == id) {
+					check = 1;
+					item.setErrday(1);
+					l.errdayItem(item);
+					break;
+				}
+			}
+			if (check != 1) {
+				System.out.println("an item with the id does not exist. Please try again.");
+				i--;
+				continue;
+			}
+			}
+		System.out.println("The items have been marked <errday>.");
 	}
 //	public static void findCategory(TodoList l, String category) {
 //		int num = 0;
