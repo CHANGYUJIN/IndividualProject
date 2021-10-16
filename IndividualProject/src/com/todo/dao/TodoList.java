@@ -29,7 +29,7 @@ public class TodoList {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String line;
-			String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap)"
+			String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, errday)"
 						+ " values (?,?,?,?,?,?,?);";
 			int records = 0;
 			while((line = br.readLine()) != null) {
