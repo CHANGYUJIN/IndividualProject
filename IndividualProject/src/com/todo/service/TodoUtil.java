@@ -299,8 +299,7 @@ public class TodoUtil {
 					check = 1;
 					item.setIs_completed(1);
 					l.completeItem(item);
-					System.out.println("the item has been completed.");
-					return;
+					break;
 				}
 			}
 			if (check != 1) {
