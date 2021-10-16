@@ -30,7 +30,7 @@ public class TodoList {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String line;
 			String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, errday)"
-						+ " values (?,?,?,?,?,?,?);";
+						+ " values (?,?,?,?,?,?,?,?);";
 			int records = 0;
 			while((line = br.readLine()) != null) {
 				StringTokenizer st = new StringTokenizer(line, "##");
@@ -65,7 +65,7 @@ public class TodoList {
 	}
 	
 	public int addItem(TodoItem t) {
-		String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap)" + " values (?,?,?,?,?,?,?);";
+		String sql = "insert into list (title, memo, category, current_date, due_date, is_completed, asap, errday)" + " values (?,?,?,?,?,?,?,?);";
 		PreparedStatement pstmt;
 		int count = 0;
 		try {
@@ -88,7 +88,7 @@ public class TodoList {
 	}
 	
 	public int updateItem(TodoItem t) {
-		String sql = "update list set title=?, memo=?, category=?, current_date=?, due_date=?, is_completed=?, asap=?" + " where id = ?;";
+		String sql = "update list set title=?, memo=?, category=?, current_date=?, due_date=?, is_completed=?, asap=?, errday=?" + " where id = ?;";
 		PreparedStatement pstmt;
 		int count = 0;
 		try {
