@@ -1,0 +1,10 @@
+1##assignment##1##OS##philosopher's lunch programming assignment##2021/10/05##2021/10/09 01:10:32
+0##meeting##1##lunch##lunch with prof. Ji##2021/09/29##2021/10/09 02:25:03
+0##meeting##0##breakfast##breakfast with Susanna##2021/09/24##2021/09/25 10:10:03
+0##assignment##0##algorithm##chatper 4 & 5##2021/10/12##2021/10/09 02:51:38
+0##assignment##1##syntax##chapter 4##2021/09/28##2021/09/25 10:14:55
+0##lecture##0##TGC##translation in global context lecture##2021/09/29##2021/09/25 10:16:14
+0##lecture##0##english##a lecture for a bonus point##2021/10/03##2021/09/25 10:16:42
+0##contest##0##programming##mandatory programming contest##2021/10/06##2021/09/25 10:17:14
+0##chapel##0##wednesday_chapel##online chapel every Wednesday##2021/09/29##2021/09/25 10:19:02
+0##assignment##0##sound_pattern##presentation about Jeju-eo##2021/10/05##2021/09/25 10:27:33
