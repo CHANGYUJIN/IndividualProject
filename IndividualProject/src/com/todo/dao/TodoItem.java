@@ -114,7 +114,10 @@ public class TodoItem {
 					return "<asap> " + "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
 			}
 			else {
-				return "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
+				if(this.err == 1)
+					return "<errday/week> " + "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
+				else
+					return "[" + category + "] " + title + "[V] - " + desc + " - " + due_date + " - " + current_date;
 			}
 		else {
 			if(this.asap == 1) {
